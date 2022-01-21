@@ -41,7 +41,7 @@ CREATE TABLE cours(
    id_matiere INTEGER NOT NULL,
    id_salle INTEGER NOT NULL,
    CONSTRAINT PK_cours PRIMARY KEY(id_cours),
-   CONSTRAINT AK_cours_ident UNIQUE(id_prof, id_matiere, id_salle, heure_debut, heure_fin),
+   CONSTRAINT AK_cours_ident UNIQUE(id_salle, heure_debut, heure_fin),
    CONSTRAINT FK_cours_professeur FOREIGN KEY(id_prof) REFERENCES professeur(id_prof),
    CONSTRAINT FK_cours_Matière FOREIGN KEY(id_matiere) REFERENCES Matière(id_matiere),
    CONSTRAINT FK_cours_salle FOREIGN KEY(id_salle) REFERENCES salle(id_salle)
